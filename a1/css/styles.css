@@ -1,0 +1,19 @@
+fieldset {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+input[type="button"] {
+  background-color: red;
+  color: white;
+  font-size: 13px;
+  border: none;
+}
+
+input[type="submit"] {
+  background-color: red;
+  color: white;
+  font-size: 13px;
+  border: none;
+  margin-left: 45%;
+}
