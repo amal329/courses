@@ -1,0 +1,142 @@
+.green {
+  background-color: #08b494;
+}
+
+.orange {
+  background-color: #e09c24;
+}
+
+.blue {
+  background-color: #0f9ffa;
+}
+
+.purple {
+  background-color: #963596;
+}
+
+.navbar div {
+  padding: 10px;
+}
+
+.navbar .logo {
+  font-size: 220%;
+}
+
+.navbar a {
+  color: white;
+  font-size: 110%;
+  font-weight: 500;
+}
+
+.search svg {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.list svg {
+  width: 40px;
+  height: 40px;
+}
+
+.list {
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 15px;
+}
+
+h1 {
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 330%;
+  padding: 15px 20px;
+}
+
+.one img {
+  width: 100%;
+  height: 100%;
+  padding: 15px 25px;
+}
+
+button {
+  background: none;
+  border: white 2px solid;
+  padding: 15px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 550;
+  letter-spacing: 2px;
+  margin-left: 15px;
+}
+
+button:hover {
+  background-color: #000;
+  border-color: #000;
+}
+
+p {
+  font-style: italic;
+  color: #fff;
+  font-size: 20px;
+  line-height: 23.5px;
+  font-weight: 400;
+  margin-left: 15px;
+}
+
+.smol {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.7;
+  letter-spacing: 1.5px;
+  margin-bottom: 5px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.bold {
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.two img {
+  width: 600px;
+  height: 500px;
+  padding: 20px;
+}
+
+.two h1 {
+  padding-top: 25px;
+}
+
+.row {
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+.col {
+  padding: 15px;
+}
+
+.three img {
+  width: 100%;
+  height: 100%;
+}
+
+.four img {
+  width: 100%;
+  height: 100%;
+}
+
+table th {
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+
+table td {
+  padding: 5px;
+}
+
+table svg {
+  margin-right: 5px;
+}
