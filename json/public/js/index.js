@@ -18,9 +18,9 @@ async function addDept(){
     let id = await generateId();
 
 let dept ={
-"id":id,
-"dname":"John Smith",
-"loc":"Pune"
+    "id":parseInt(prompt("Enter id")),
+    "dname":prompt("Enter name"),
+    "loc":prompt("Enter location")
 }
 fetch('http://localhost:3000/dept/',{
 method: 'POST',
@@ -37,11 +37,11 @@ console.log(res);
 //Updating the Data in db.json using json server
 function editDept(){
 let dept ={
-"id":2,
-"dname":"Quality",
-"loc":"Kolkatta"
+"id":parseInt(prompt("Enter id")),
+"dname":prompt("Enter name"),
+"loc":prompt("Enter location")
 }
-fetch("http://localhost:3000/dept/",{
+fetch("http://localhost:3000/dept/"+dept.id,{
 method:"PUT",
 headers:{
 "Content-Type":"application/json"
@@ -54,8 +54,7 @@ console.log(res);
 
 //Deleting Data in db.json using json server
 async function deleteDept(){
-let id = await generateId();
-id--;
+let id = parseInt(prompt("Enter user id to delete"));
 
 fetch("http://localhost:3000/dept/"+id,{
 method:"DELETE",
@@ -77,7 +76,6 @@ return res.json();
 }).then((dept)=>{
 res.innerHTML = "";
 dept.forEach(item => {
-    console.log(createItem(item.id,item.dname,item.loc));
     res.innerHTML += createItem(item.id,item.dname,item.loc);
 });
 })

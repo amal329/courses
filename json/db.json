@@ -2,33 +2,13 @@
   "dept": [
     {
       "id": 1,
-      "dname": "Kkkk",
+      "dname": "Amal",
       "loc": "Pune"
     },
     {
       "id": 2,
-      "dname": "Kkkk",
-      "loc": "Pune"
-    },
-    {
-      "id": 3,
-      "dname": "Kkkk",
-      "loc": "Pune"
-    },
-    {
-      "id": 4,
-      "dname": "Kkkk",
-      "loc": "Pune"
-    },
-    {
-      "id": 5,
-      "dname": "Kkkk",
-      "loc": "Pune"
-    },
-    {
-      "id": 6,
-      "dname": "John Smith",
-      "loc": "Pune"
+      "dname": "Krishna",
+      "loc": "Goa"
     }
   ]
 }
