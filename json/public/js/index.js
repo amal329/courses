@@ -1,26 +1,22 @@
-//Adding Data to db.json using json server
+function createItem(id,name,loc){
+    var item = `<tr>
+                    <td>${id}</td>
+                    <td>${name}</td>
+                    <td>${loc}</td>
+                    <td> <button class="btn btn-secondary" onclick="editDetails(\`${id}\`,\`${name}\`,\`${loc}\`)">Edit</button> </td>
+                    <td> <button class="btn btn-danger" onclick="deleteDept(${id})">Delete</button> </td>
+                </tr>`;
 
-function createItem(id,dname,loc){
-    var item = `<div class="item text-center"> Id: ${id}<br/> Name: ${dname}<br/> Location: ${loc}<br/></div><br/>`
     return item;
 }
 
 
-async function generateId(){
-    let res = await fetch("http://localhost:3000/dept/");
-    let dept = await res.json();
-    return dept.length+1;
-}
-
-
-async function addDept(){
-
-    let id = await generateId();
+async function addDept(id,name,loc){
 
 let dept ={
-    "id":parseInt(prompt("Enter id")),
-    "dname":prompt("Enter name"),
-    "loc":prompt("Enter location")
+    "id":parseInt(id),
+    "dname":name,
+    "loc":loc
 }
 fetch('http://localhost:3000/dept/',{
 method: 'POST',
@@ -30,16 +26,16 @@ headers:{
 body:JSON.stringify(dept)
 }).then((res)=>{
 console.log(res);
-
+getDept();
+toggleWindow();
 })
 }
 
-//Updating the Data in db.json using json server
-function editDept(){
+function editDept(id,name,loc){
 let dept ={
-"id":parseInt(prompt("Enter id")),
-"dname":prompt("Enter name"),
-"loc":prompt("Enter location")
+"id":id,
+"dname":name,
+"loc":loc
 }
 fetch("http://localhost:3000/dept/"+dept.id,{
 method:"PUT",
@@ -49,13 +45,13 @@ headers:{
 body:JSON.stringify(dept)
 }).then((res)=>{
 console.log(res);
+getDept();
+toggleWindow();
 })
 }
 
-//Deleting Data in db.json using json server
-async function deleteDept(){
-let id = parseInt(prompt("Enter user id to delete"));
-
+async function deleteDept(id){
+    
 fetch("http://localhost:3000/dept/"+id,{
 method:"DELETE",
 headers:{
@@ -63,21 +59,65 @@ headers:{
 }
 }).then((res)=>{
 console.log(res);
-})
+getDept();
+});
 }
 
-//Fetching the Data from db.json using json server
 function getDept(){
 
-    var res=document.querySelector("#res");
+    var res=document.querySelector("#table");
 
 fetch("http://localhost:3000/dept").then((res)=>{
 return res.json();
 }).then((dept)=>{
-res.innerHTML = "";
+res.innerHTML = `<thead class="thead-dark">
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Edit</th>
+    <th>Delete</th>
+</tr>
+</thead>`;
 dept.forEach(item => {
     res.innerHTML += createItem(item.id,item.dname,item.loc);
 });
-})
+});
 }
     
+function toggleWindow(){
+    var window = document.getElementById("window");
+    window.classList.toggle("hide");
+
+    document.getElementById("id").value="";
+    document.getElementById("name").value="";
+    document.getElementById("location").value="";
+}
+
+function editDetails(id,name,loc){
+    console.log("id is",id,"name is ",name," and loc is ",loc);
+    toggleWindow();
+
+    let id_i = document.getElementById("id");
+    let name_i = document.getElementById("name");
+    let location_i = document.getElementById("location");
+    let submit = document.getElementById("submit");
+
+    console.log("Value of of is "+id_i.innerHTML);
+
+    id_i.value = id;
+    name_i.value = name;
+    location_i.value = loc;
+
+    submit.onclick=() => editDept(id_i.value,name_i.value,location_i.value);
+}
+
+function newUser(){
+    toggleWindow();
+    let id_i = document.getElementById("id");
+    let name_i = document.getElementById("name");
+    let location_i = document.getElementById("location");
+    let submit = document.getElementById("submit");
+
+    submit.onclick=() => addDept(id_i.value,name_i.value,location_i.value);
+}

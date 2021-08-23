@@ -3,12 +3,17 @@
     {
       "id": 1,
       "dname": "Amal",
-      "loc": "Pune"
+      "loc": "China"
+    },
+    {
+      "id": 3,
+      "dname": "Gitarth",
+      "loc": "Gokarna"
     },
     {
       "id": 2,
-      "dname": "Krishna",
-      "loc": "Goa"
+      "dname": "Hir",
+      "loc": "Kasol"
     }
   ]
 }

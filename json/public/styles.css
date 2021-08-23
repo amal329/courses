@@ -11,14 +11,20 @@ td{
     justify-content: center;
 }
 
-td button{
-    width: 100px;
-    height: 50px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-}
-
 .item{
     padding:5px;
     border: 2px #000 solid;
+}
+
+.window{
+    margin-left: 35%;
+    margin-top: 10%;
+    display: block;
+    position: absolute;
+    background-color: rgb(175, 175, 175);
+    z-index : 1;
+}
+
+.hide{
+    display: none;
 }

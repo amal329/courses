@@ -11,37 +11,71 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-4">
-            <div class="d-flex justify-content-center align-items-center">
-                <table border="5">
-                    <tr>
-                    <td><button onClick="addDept()">Create Department</button></td>
-                    </tr>
-                    <tr>
-                    <td><button onClick="getDept()">Retrieve Department</button></td>
-                    </tr>
-                    <tr>
-                    <td><button onClick="editDept()">Update Department</button></td>
-                    </tr>
-                    <tr>
-                    <td><button onClick="deleteDept()">Delete Department</button></td>
-                    </tr>
-                    </table>
-            </div>
-        </div>
-        <div class="col-8">
-            <div id="res" class="d-flex flex-column align-items-stretch justify-content-center p-3">
-
-            </div>
+    <div id="window" class="window text-start p-2">
+        <table>
+            <thead>
+                <tr>
+                    <th class="text-center"><h3>Enter the details</h3></th>
+                </tr>
+            </thead>
+            <tr>
+                <td>Id: </td>
+                <td><input type="number" id="id" required/></td>
+            </tr>
+            <tr>
+                <td>Name: </td>
+                <td><input id="name" type="text" required></td>
+            </tr>
+            <tr>
+                <td>Location: </td>
+                <td><input id="location" type="text" required></td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-primary" id="submit">Submit</button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" onClick="toggleWindow()">Cancel</button>                    
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div>
+            <h1 id="title">Employee DB</h1>
         </div>
     </div>
-    
+    <div class="d-flex justify-content-end p-3">
+        <div>
+            <button type="button" class="btn btn-primary m-2" onclick="getDept()">Load Data</button>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary m-2" onclick="newUser()">Add Employee</button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <div></div>
+    </div>
+    <div class="d-flex row justify-content-center">
+        <div class="col-auto">
+            <table class="table table-responsive" id="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
 </div>
-<script src="./js/index.js"></script>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./js/index.js"></script>
 </body>
 </html>
